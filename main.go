@@ -25,8 +25,7 @@ type Student struct {
 	Password string `json:"password"`
 }
 
-func main() {
-	router := mux.NewRouter()
+func main() { 
 	// Load environment variables from .env file
 	if err := godotenv.Load(); err != nil {
 		log.Fatalf("Error loading .env file: %v", err)
