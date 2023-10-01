@@ -27,7 +27,9 @@ type Student struct {
 
 func main() { 
 	router := mux.NewRouter()
-	 
+	 if err := godotenv.Load(); err != nil {
+		log.Fatalf("Error loading .env file: %v", err)
+	}
 
 	// Get MongoDB URI from environment variable
 	mongodbURI := os.Getenv("MONGODB_URI")
